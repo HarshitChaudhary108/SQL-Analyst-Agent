@@ -1,0 +1,13 @@
+[project]
+name = "data-analyst-agent"
+version = "0.1.0"
+description = "description = "An autonomous LangGraph agent that translates natural language into validated, safety-audited SQL, executes it against PostgreSQL, and delivers grounded, human-readable insights""
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "langchain-groq>=1.1.3",
+    "langgraph>=1.2.11",
+    "psycopg2-binary>=2.9.12",
+    "pydantic>=2.13.5",
+]
