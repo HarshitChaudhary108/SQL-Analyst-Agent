@@ -20,7 +20,7 @@ app = FastAPI(
 
 
 class QueryRequest(BaseModel):
-    question: str = Field(..., examples="What is the email address of user with first name Joshua and last name Walker?")
+    question: str
 
 
 class QueryResponse(BaseModel):
@@ -37,7 +37,7 @@ def health() -> dict:
 
 
 @app.post("/query", response_model=QueryResponse )
-def query(request: QueryRequest = Path(..., description="Write your query in Human Language", example="What is the email address of user with first name Joshua and last name Walker?")) -> QueryResponse:
+def query(request: QueryRequest) -> QueryResponse:
     if not request.question or not request.question.strip():
         raise HTTPException(status_code=400, detail="Question cannot be empty.")
 
