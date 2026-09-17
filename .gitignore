@@ -11,3 +11,4 @@ wheels/
 uv.lock
 schema_details.txt
 data/
+.env
