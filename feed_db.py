@@ -26,8 +26,9 @@ cursor = conn.cursor()
 
 print("Database connection established successfully.")
 
-# Creating Tables
 
+
+# Creating Tables
 create_tables_sql = """
     CREATE SCHEMA IF NOT EXISTS public;
 
@@ -195,18 +196,6 @@ ON public.ratings(driver_id);
 
 cursor.execute(create_tables_sql)
 
-# Clear Existing Data
-
-#cursor.execute("""
-#    TRUNCATE TABLE 
-#        public.ratings, 
-#        public.payments, 
-#        public.rides, 
-#        public.vehicles, 
-#        public.users 
-#    CASCADE
-#    """
-#)
 
 # Load CSV Data into Tables
 
